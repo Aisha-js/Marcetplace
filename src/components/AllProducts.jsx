@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Navbar = () => {
+const AllProducts = () => {
     return (
         <div>
-            Navbar
+            All products
         </div>
     );
 };
 
-export default Navbar;
+export default AllProducts;

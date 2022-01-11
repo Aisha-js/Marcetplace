@@ -1,5 +1,10 @@
+import React from "react";
+import MyRoutes from "./MyRoutes";
+
 function App() {
-  return <div className="App"></div>;
+  return <React.Fragment>
+    <MyRoutes />
+  </React.Fragment>
 }
 
 export default App;
