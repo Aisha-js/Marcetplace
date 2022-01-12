@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect } from "react";
+import { ClientContext } from "../contexts/ClientProvider";
 
 const AllProducts = () => {
-    return (
-        <div>
-            All products
-        </div>
-    );
+  const { getProducts, products } = useContext(ClientContext);
+  useEffect(() => {
+    getProducts();
+  }, []);
+  console.log(products);
+
+  if (!products) {
+    return <h2>Loading...</h2>;
+  }
+
+  return (
+    <div>
+      <h1>All products</h1>
+    </div>
+  );
 };
 
 export default AllProducts;
