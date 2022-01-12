@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React, { useContext, useEffect } from "react";
-import { ClientContext } from "../contexts/ClientProvider";
+import { ClientContext } from "../context/ClientProvider";
 import ProductCard from "./ProductCard"
 
 const AllProducts = () => {

@@ -3,10 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AdminProvider from "./context/AdminProvider";
 import ClientProvider from "./context/ClientProvider";
+// import ClientProvider from "./context/ClientProvider";
 import AddPoduct from "./pages/AddPoduct";
 import AdminPannel from "./pages/AdminPannel";
 import HomePage from "./pages/HomePage";
 import ProductDetail from "./pages/ProductDetail";
+import ProductsPage from "./pages/ProductsPage";
+
 
 const MyRoutes = () => {
   return (
@@ -19,6 +22,7 @@ const MyRoutes = () => {
             <Route path="/admin" element={<AdminPannel />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/products/" element={<ProductsPage />} />
           </Routes>
         </BrowserRouter>
       </ClientProvider>
