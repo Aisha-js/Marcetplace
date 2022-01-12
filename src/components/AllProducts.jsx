@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import React, { useContext, useEffect } from "react";
 import { ClientContext } from "../contexts/ClientProvider";
+import ProductCard from "./ProductCard"
 
 const AllProducts = () => {
   const { getProducts, products } = useContext(ClientContext);
@@ -19,7 +20,7 @@ const AllProducts = () => {
       <Grid container spacing={4}>
         {products.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
-            {/* <ProductCurd item={item} /> */}
+            <ProductCard item={item} />
           </Grid>
         ))}
       </Grid>
