@@ -1,6 +1,6 @@
 import { Button, TableCell, TableRow } from "@mui/material";
 import React, { useContext, useState } from "react";
-import { AdminContext } from "../contexts/AdminProvider";
+import { AdminContext } from "../context/AdminProvider";
 
 const EditRow = ({ editProduct, setEditProduct }) => {
   const [product, setProduct] = useState(editProduct);

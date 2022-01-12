@@ -1,9 +1,12 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import MyTable from '../components/MyTable';
 
 const AdminPannel = () => {
     return (
-        <div>
-            Admin AdminPannel
+        <div className="admin-pannel">
+           <MyTable />
+           {/* <ToastContainer /> */}
         </div>
     );
 };

@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { AdminContext } from "../contexts/AdminProvider";
+import { AdminContext } from "../context/AdminProvider";
 import { Button } from "@mui/material";
 import EditRow from "./EditRow";
 

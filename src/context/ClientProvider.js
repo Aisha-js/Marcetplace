@@ -48,7 +48,6 @@ const ClientProvider = (props) => {
     }
   };
 
-  // CART
 
   return (
     <ClientContext.Provider

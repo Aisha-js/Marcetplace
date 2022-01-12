@@ -5,9 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { ClientContext } from '../context/ClientProvider';
 
 export default function ProductCard({item}) {
-    const {} =  React.useContext()
+    const {  } =  React.useContext( ClientContext)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
