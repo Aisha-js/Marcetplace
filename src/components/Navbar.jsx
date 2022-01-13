@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import ShoppingIcon from "../images/shopping.png";
 import UserIcon from "../images/user.png";
 
+
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -118,6 +119,10 @@ const Navbar = () => {
               >
                 Add Product
               </Button>
+           </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+         <SearchProduct />
             </Link> */}
           </Box>
 

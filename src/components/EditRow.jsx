@@ -42,7 +42,7 @@ const EditRow = ({ editProduct, setEditProduct }) => {
           name="price"
           onChange={handleChange}
           type="text"
-          value={product.price}
+          value={product.type}
         />
       </TableCell>
       <TableCell align="right">
@@ -61,6 +61,14 @@ const EditRow = ({ editProduct, setEditProduct }) => {
           value={product.color}
         />
       </TableCell>
+      <TableCell align="right">
+        <input
+          name="price"
+          onChange={handleChange}
+          type="text"
+          value={product.price}
+        />
+        </TableCell>
       <TableCell align="right">
         <input
           name="image"
