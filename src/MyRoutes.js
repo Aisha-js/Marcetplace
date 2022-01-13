@@ -9,7 +9,6 @@ import HomePage from "./pages/HomePage";
 import ProductDetail from "./pages/ProductDetail";
 import ProductsPage from "./pages/ProductsPage";
 
-
 const MyRoutes = () => {
   return (
     <AdminProvider>
