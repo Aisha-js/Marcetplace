@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AdminProvider from "./context/AdminProvider";
 import ClientProvider from "./context/ClientProvider";
-// import ClientProvider from "./context/ClientProvider";
 import AddPoduct from "./pages/AddPoduct";
 import AdminPannel from "./pages/AdminPannel";
 import HomePage from "./pages/HomePage";

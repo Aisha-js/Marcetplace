@@ -34,6 +34,7 @@ export default function MyTable() {
             <TableCell align="right">Type</TableCell>
             <TableCell align="right">Size</TableCell>
             <TableCell align="right">Color</TableCell>
+            <TableCell align="right">Price</TableCell>
             <TableCell align="right">Image</TableCell>
             <TableCell align="right">#</TableCell>
             <TableCell align="right">#</TableCell>
@@ -56,11 +57,11 @@ export default function MyTable() {
                   </TableCell>
                   <TableCell align="right">{row.brand}</TableCell>
                   <TableCell align="right">{row.type}</TableCell>
-                  <TableCell align="right">{row.price}</TableCell>
                   <TableCell align="right">{row.size}</TableCell>
                   <TableCell align="right">{row.color}</TableCell>
+                  <TableCell align="right">{row.price}</TableCell>
                   <TableCell align="right">
-                    <img width={100} src={row.image} alt="sneakers" />
+                    <img width={100} src={row.image} alt="pics" />
                   </TableCell>
                   <TableCell align="right">
                     <Button onClick={() => setEditProduct(row)}>EDIT</Button>

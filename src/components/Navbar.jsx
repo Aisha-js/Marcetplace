@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import SearchProduct from './SearchProduct';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Войти', 'Account', 'Dashboard', 'Logout'];
@@ -105,7 +106,10 @@ const Navbar = () => {
                   Admin Pannel
               </Button>
            </Link>
-            
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+         <SearchProduct />
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
