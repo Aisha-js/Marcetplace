@@ -14,8 +14,6 @@ import { Link } from "react-router-dom";
 import ShoppingIcon from "../images/shopping.png";
 import UserIcon from "../images/user.png";
 
-const pages = ["Products", "Pricing", "Blog"];
-
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);

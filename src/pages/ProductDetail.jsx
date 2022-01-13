@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { Button, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
-// import { ClientContext } from "../context/ClientProvider";
 
 const ProductDetail = () => {
   const params = useParams();
