@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
 import { calcSubPrice, calcTotalPrice } from "../helpers/calcPrice";
 import { API } from "../helpers/const";
 
@@ -49,7 +49,7 @@ const ClientProvider = (props) => {
     }
   };
 
-  //! CART 
+  //! CART
   function addAndDeleteProductInCart(product) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -149,20 +149,42 @@ const ClientProvider = (props) => {
     dispatch(action);
   }
 
+  //! Pagination
+
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postPerPage = 9;
+
+  useEffect(() => {
+    if (state.products) {
+      setPosts(state.products);
+    }
+  }, [state.products]);
+
+  const indexOfLastPost = postPerPage * currentPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalProductsCount = posts.length;
 
   return (
     <ClientContext.Provider
       value={{
         getProducts: getProducts,
         getProductDetail: getProductDetail,
-        addAndDeleteProductInCart:addAndDeleteProductInCart,
-        checkProductInCart:checkProductInCart,
-        getCart:getCart,
-        changeCountCartProduct:changeCountCartProduct,
-        deleteProductInCart:deleteProductInCart,
-        products: state.products,
+        addAndDeleteProductInCart: addAndDeleteProductInCart,
+        checkProductInCart: checkProductInCart,
+        getCart: getCart,
+        changeCountCartProduct: changeCountCartProduct,
+        deleteProductInCart: deleteProductInCart,
+        setCurrentPage: setCurrentPage,
+        // products: state.products,
+        products: currentPosts,
         detail: state.detail,
+        postPerPage: postPerPage,
+        productsCount: state.productsCount,
         cart: state.cart,
+        totalProductsCount: totalProductsCount,
+        currentPage: currentPage,
       }}
     >
       {props.children}

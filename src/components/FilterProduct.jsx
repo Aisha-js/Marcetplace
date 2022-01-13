@@ -22,7 +22,7 @@ const FilterProducts = () => {
     getProducts();
   }
   function reset() {
-    navigate("/");
+    navigate("/products");
     getProducts();
     setFrom("");
     setTo("");
@@ -36,7 +36,6 @@ const FilterProducts = () => {
   }, []);
 
   return (
-
     <div className="filter-products">
       <div className="price-filter">
         <TextField
