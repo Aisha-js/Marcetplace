@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import { calcSubPrice, calcTotalPrice } from "../helpers/calcPrice";
 import { API } from "../helpers/const";
 
 export const ClientContext = createContext();
@@ -48,14 +49,142 @@ const ClientProvider = (props) => {
     }
   };
 
+  //! CART
+  function addAndDeleteProductInCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = {
+        products: [],
+        totalPrice: 0,
+      };
+    }
+
+    let cartProduct = {
+      product: product,
+      count: 1,
+      subPrice: 0,
+    };
+    cartProduct.subPrice = calcSubPrice(cartProduct);
+
+    let check = cart.products.find((item) => {
+      return item.product.id === product.id;
+    });
+
+    if (!check) {
+      cart.products.push(cartProduct);
+    } else {
+      cart.products = cart.products.filter((item) => {
+        return item.product.id !== product.id;
+      });
+    }
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    let action = {
+      type: "ADD_AND_DELETE_PRODUCT_IN_CART",
+      payload: cart.products.length,
+    };
+    dispatch(action);
+  }
+
+  function checkProductInCart(id) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = {
+        products: [],
+      };
+    }
+    let check = cart.products.find((item) => {
+      return item.product.id === id;
+    });
+
+    if (!check) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function getCart() {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      cart = {
+        totalPrice: 0,
+        products: [],
+      };
+    }
+    let action = {
+      type: "GET_CART",
+      payload: cart,
+    };
+    dispatch(action);
+  }
+
+  function changeCountCartProduct(value, id) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = cart.products.map((item) => {
+      if (item.product.id === id) {
+        item.count = value;
+        item.subPrice = calcSubPrice(item);
+      }
+      return item;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCart();
+  }
+
+  function deleteProductInCart(id) {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.products = cart.products.filter((item) => {
+      return item.product.id !== id;
+    });
+    cart.totalPrice = calcTotalPrice(cart.products);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    getCart();
+    let action = {
+      type: "ADD_AND_DELETE_PRODUCT_IN_CART",
+      payload: cart.products.length,
+    };
+    dispatch(action);
+  }
+
+  //! Pagination
+
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postPerPage = 9;
+
+  useEffect(() => {
+    if (state.products) {
+      setPosts(state.products);
+    }
+  }, [state.products]);
+
+  const indexOfLastPost = postPerPage * currentPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalProductsCount = posts.length;
 
   return (
     <ClientContext.Provider
       value={{
         getProducts: getProducts,
         getProductDetail: getProductDetail,
-        products: state.products,
+        addAndDeleteProductInCart: addAndDeleteProductInCart,
+        checkProductInCart: checkProductInCart,
+        getCart: getCart,
+        changeCountCartProduct: changeCountCartProduct,
+        deleteProductInCart: deleteProductInCart,
+        setCurrentPage: setCurrentPage,
+        // products: state.products,
+        products: currentPosts,
         detail: state.detail,
+        postPerPage: postPerPage,
+        productsCount: state.productsCount,
+        cart: state.cart,
+        totalProductsCount: totalProductsCount,
+        currentPage: currentPage,
       }}
     >
       {props.children}

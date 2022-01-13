@@ -12,7 +12,11 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import ShoppingIcon from "../images/shopping.png";
-import UserIcon from "../images/user.png";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchProduct from "./SearchProduct";
+
+const pages = ["Products", "Pricing", "Blog"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,7 +52,7 @@ const Navbar = () => {
     </Link>,
   ];
   return (
-    <AppBar position="static" color="inherit">
+    <AppBar position="static" style={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/">
@@ -106,17 +110,21 @@ const Navbar = () => {
             <Link to="/products">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
-                See All
+                SEE All
               </Button>
             </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            <SearchProduct />
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <img width="30" src={UserIcon} alt="userIcon" />
+                <PersonIcon sx={{ color: "white" }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -141,6 +149,11 @@ const Navbar = () => {
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton>
+              <ShoppingBagIcon sx={{ color: "white" }} />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
