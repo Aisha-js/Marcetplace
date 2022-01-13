@@ -112,18 +112,6 @@ const Navbar = () => {
                 See All
               </Button>
             </Link>
-            {/* <Link to="/add">
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Add Product
-              </Button>
-           </Link>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-         <SearchProduct />
-            </Link> */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
