@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -14,12 +14,16 @@ import { Link } from "react-router-dom";
 import SearchProduct from "./SearchProduct";
 import ShoppingIcon from "../images/shopping.png";
 import PersonIcon from "@mui/icons-material/Person";
-import { ClientContext } from "../context/ClientProvider";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Badge from "@mui/material/Badge";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import { ClientContext } from "../context/ClientProvider";
+import MenuIcon from "@mui/icons-material/Menu";
+import { AuthContext } from "../context/AuthProvider";
 
 const Navbar = () => {
   const { productsCount } = React.useContext(ClientContext);
+  const { authWithGoogle, user, logout } = React.useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,10 +41,11 @@ const Navbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   const settings = [
-    <MenuItem>
-      <Typography textAlign="center">Войти</Typography>
-    </MenuItem>,
+    // <MenuItem>
+    //   <Typography textAlign="center">Войти</Typography>
+    // </MenuItem>,
     <Link to="/admin">
       <MenuItem onClick={handleCloseNavMenu}>
         <Typography className="MenuItem" textAlign="center">
@@ -132,10 +137,30 @@ const Navbar = () => {
           </Box>
 
 
+          {user ? (
+            <>
+              <IconButton onClick={logout}>
+                <PersonIcon sx={{ color: "white" }} />
+              </IconButton>
+            </>
+          ) : (
+            <Button color="inherit" onClick={authWithGoogle}>
+              Войти
+            </Button>
+          )}
+
+          <Box sx={{ my: 2, color: "white", display: "block" }}>
+            <Box sx={{ flexGrow: 0 }}>
+              <IconButton>
+                <ShoppingBagIcon sx={{ color: "white" }} />
+              </IconButton>
+            </Box>
+          </Box>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <PersonIcon sx={{ color: "white" }} />
+                <MenuIcon sx={{ color: "white" }} />
               </IconButton>
             </Tooltip>
             <Menu

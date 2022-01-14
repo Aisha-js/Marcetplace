@@ -1,8 +1,7 @@
 import React from "react";
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
+import CarouselSecondSlide from "../components/CarouselSecondSlide";
 import Img1 from "../images/Img1.png";
-import Img2 from "../images/Img2.png";
-import Img3 from "../images/Img3.png";
 
 const HomePage = () => {
   return (
@@ -10,9 +9,6 @@ const HomePage = () => {
     <Carousel>
       <Carousel.Item interval={1000}>
         <img className="d-block w-100" src={Img1} alt="First slide" />
-        <Carousel.Caption>
-          <h1>This just in.</h1>
-        </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={500}>
         <img className="d-block w-100" src={Img2} alt="Second slide" />
@@ -30,6 +26,9 @@ const HomePage = () => {
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
         </Carousel.Caption>
+
+        <CarouselSecondSlide />
+
       </Carousel.Item>
     </Carousel>
 

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AdminProvider from "./context/AdminProvider";
+import AuthProvider from "./context/AuthProvider";
 import ClientProvider from "./context/ClientProvider";
 import AddPoduct from "./pages/AddPoduct";
 import AdminPannel from "./pages/AdminPannel";
@@ -17,7 +18,6 @@ const MyRoutes = () => {
       <ClientProvider>
         <BrowserRouter>
           <Navbar />
-          
           <Routes>
             <Route path="/add" element={<AddPoduct />} />
             <Route path="/admin" element={<AdminPannel />} />
@@ -30,6 +30,7 @@ const MyRoutes = () => {
         </BrowserRouter>
       </ClientProvider>
     </AdminProvider>
+
   );
 };
 
