@@ -5,6 +5,7 @@ import AdminProvider from "./context/AdminProvider";
 import ClientProvider from "./context/ClientProvider";
 import AddPoduct from "./pages/AddPoduct";
 import AdminPannel from "./pages/AdminPannel";
+import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductDetail from "./pages/ProductDetail";
 import ProductsPage from "./pages/ProductsPage";
@@ -21,6 +22,8 @@ const MyRoutes = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/products/" element={<ProductsPage />} />
+            <Route path="/cart/" element={<CartPage/>} />
+
           </Routes>
         </BrowserRouter>
       </ClientProvider>

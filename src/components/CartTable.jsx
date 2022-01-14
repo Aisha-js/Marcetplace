@@ -7,9 +7,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { TableFooter } from "@mui/material";
-import { ClientContext } from "../contexts/ClientProvider";
 import DeleteIcon from "../images/delete.png";
 import { Link } from "react-router-dom";
+import { ClientContext } from "../context/ClientProvider";
 
 
 export default function CartTable({ cart }) {

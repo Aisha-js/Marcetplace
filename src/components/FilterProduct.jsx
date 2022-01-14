@@ -10,7 +10,7 @@ const FilterProducts = () => {
 
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [value, setValue] = useState("");
+//   const [value, setValue] = useState("");
 
   function filter(key, value) {
     search.set(key, value);
@@ -18,7 +18,7 @@ const FilterProducts = () => {
     navigate(newPath);
     setFrom(search.get("price_gte"));
     setTo(search.get("price_lte"));
-    setValue(search.get("q"));
+    // setValue(search.get("q"));
     getProducts();
   }
   function reset() {
@@ -26,13 +26,13 @@ const FilterProducts = () => {
     getProducts();
     setFrom("");
     setTo("");
-    setValue("");
+    // setValue("");
   }
 
   useEffect(() => {
     setFrom(search.get("price_gte"));
     setTo(search.get("price_lte"));
-    setValue(search.get("q"));
+    // setValue(search.get("q"));
   }, []);
 
   return (
