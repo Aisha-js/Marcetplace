@@ -15,6 +15,8 @@ import SearchProduct from "./SearchProduct";
 import ShoppingIcon from "../images/shopping.png";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import Badge from "@mui/material/Badge";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { ClientContext } from "../context/ClientProvider";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AuthContext } from "../context/AuthProvider";
@@ -134,9 +136,6 @@ const Navbar = () => {
             </Link>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <SearchProduct />
-          </Box>
 
           {user ? (
             <>
@@ -186,6 +185,21 @@ const Navbar = () => {
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
+          <Box sx={{ my: 2, color: "white", display: "block" }}>
+            <Box sx={{ flexGrow: 0 }}>
+              <Link to='/cart'>
+              <IconButton>
+                <Badge
+                  badgeContent={productsCount}
+                  color="error"
+                  sx={{ color: "white" }}
+                >
+                  <ShoppingBagIcon sx={{ color: "white" }} />
+                </Badge>
+              </IconButton>
+              </Link>
+            </Box>
           </Box>
         </Toolbar>
       </Container>

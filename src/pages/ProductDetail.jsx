@@ -9,6 +9,7 @@ import {
 
 import { useParams } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
+import AllProducts from "../components/AllProducts";
 
 const ProductDetail = () => {
   const params = useParams();
@@ -21,7 +22,7 @@ const ProductDetail = () => {
   }
   return (
     <Container>
-      <h2>Product DETAIL</h2>
+      <h2>Product Info</h2>
       <div className="product-detail">
         <Grid container>
           <Grid item xs={6} sm={8} md={8}>
@@ -59,6 +60,9 @@ const ProductDetail = () => {
             </div>
           </Grid>
         </Grid>
+      </div>
+      <div>
+      <AllProducts />
       </div>
     </Container>
   );

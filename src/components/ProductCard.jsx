@@ -7,6 +7,10 @@ import Typography from '@mui/material/Typography';
 import { ClientContext } from '../context/ClientProvider';
 import { Link } from 'react-router-dom';
 import Button from "@mui/material/Button";
+import cart from '../images/cart.png'
+import inCart from '../images/in-cart.png'
+import info from '../images/info.png'
+
 
 export default function ProductCard({item}) {
     const { addAndDeleteProductInCart, checkProductInCart } =  React.useContext( ClientContext)
@@ -37,15 +41,15 @@ export default function ProductCard({item}) {
             onClick={() => addAndDeleteProductInCart(item)}
             size="small"
           >
-            В корзине
+            <img src={inCart} alt="" />
           </Button>
         ) : (
           <Button onClick={() => addAndDeleteProductInCart(item)} size="small">
-            В корзину
+           <img src={cart} alt="" />
           </Button>
         )}
         <Link to={`/product/${item.id}`}>
-        <Button variant="contained"  size="small"> Details</Button>
+        <Button size="extrasmall"> <img src={info} alt="" /></Button>
         </ Link>
       </CardActions>
     </Card>
