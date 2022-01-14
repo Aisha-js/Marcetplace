@@ -4,7 +4,7 @@ import Img3 from "../images/Img3.png";
 
 const CarouselSecondSlide = () => {
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <div>
         <img src={Img2} alt="Second slide" />
       </div>
