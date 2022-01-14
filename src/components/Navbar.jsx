@@ -14,12 +14,12 @@ import { Link } from "react-router-dom";
 import SearchProduct from "./SearchProduct";
 import ShoppingIcon from "../images/shopping.png";
 import PersonIcon from "@mui/icons-material/Person";
-import ShopIcon from '../images/shopping-bag.png'
-import { Badge, Notifications, MailOutline } from "@mui/icons-material";
 import { ClientContext } from "../context/ClientProvider";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import Badge from "@mui/material/Badge";
 
 const Navbar = () => {
-  const { productsCount } = React.useContext(ClientContext)
+  const { productsCount } = React.useContext(ClientContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -125,16 +125,12 @@ const Navbar = () => {
                   color: "white",
                   display: "block",
                 }}
-
               >
                 See All
               </Button>
             </Link>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <SearchProduct />
-          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -164,13 +160,21 @@ const Navbar = () => {
                 </MenuItem>
               ))}
             </Menu>
-          </Box> 
-          <Box sx={{ my: 2, color: "white", display: "block" }}>
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton>
-              <ShoppingBagIcon sx={{ color: "white" }} />
-            </IconButton>
           </Box>
+          <Box sx={{ my: 2, color: "white", display: "block" }}>
+            <Box sx={{ flexGrow: 0 }}>
+              <Link to='/cart'>
+              <IconButton>
+                <Badge
+                  badgeContent={productsCount}
+                  color="error"
+                  sx={{ color: "white" }}
+                >
+                  <ShoppingBagIcon sx={{ color: "white" }} />
+                </Badge>
+              </IconButton>
+              </Link>
+            </Box>
           </Box>
         </Toolbar>
       </Container>

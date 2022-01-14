@@ -8,7 +8,6 @@ const AllProducts = () => {
   useEffect(() => {
     getProducts();
   }, []);
-  console.log(products);
 
   if (!products) {
     return <h2>Loading...</h2>;
@@ -16,7 +15,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      <h1>All products</h1>
+      <h5>All products</h5>
       <Grid container spacing={4}>
         {products.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>

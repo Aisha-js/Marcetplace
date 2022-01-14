@@ -18,7 +18,6 @@ export default function MyTable() {
   }, []);
 
   const [editProduct, setEditProduct] = React.useState(null);
-  console.log(editProduct);
 
   if (!products) {
     return <h2>Loading...</h2>;

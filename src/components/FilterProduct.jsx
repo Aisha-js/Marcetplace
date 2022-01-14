@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
+import SearchProduct from "./SearchProduct";
 
 const FilterProducts = () => {
   let search = new URLSearchParams(window.location.search);
@@ -52,14 +53,7 @@ const FilterProducts = () => {
         />
         <Button onClick={reset}>Reset</Button>
       </div>
-      {/* <div>
-        <TextField
-          onChange={(event) => filter("q", event.target.value)}
-          variant="outlined"
-          label="Live search..."
-          value={value}
-        />
-      </div> */}
+      < SearchProduct />
     </div>
   );
 };

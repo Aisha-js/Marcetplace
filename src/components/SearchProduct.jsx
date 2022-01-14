@@ -5,6 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router";
 import { ClientContext } from "../context/ClientProvider";
 import { useContext, useEffect, useState } from 'react';
+// import { Button } from '@mui/material';
+// import close from '../images/close.png'
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -64,11 +66,11 @@ const SearchProduct = () => {
     getProducts();
   }
 
-//   function reset() {
-//     navigate("/");
-//     getProducts();
-//     setValue("");
-//   }
+  // function reset() {
+  //   navigate("/");
+  //   getProducts();
+  //   setValue("");
+  // }
 
   useEffect(() => {
     setValue(search.get("q"));
@@ -77,8 +79,8 @@ const SearchProduct = () => {
   return (
     <div className="search-product">
       <div>
-        <Toolbar>
-          <Search>
+        <Toolbar  variant="outlined">
+          <Search variant="outlined">
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -86,15 +88,13 @@ const SearchProduct = () => {
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
               onChange={(event) => filter("q", event.target.value)}
-              // variant="outlined"
-              // label="Live search..."
               value={value}
             />
           </Search>
         </Toolbar>
       </div>
-      {/* <Button onClick={reset}>Reset</Button> */}
-    </div>
+      {/* <Button sx={{color: "white"}} onClick={reset}> <img src={close} alt="close"/> </Button> */}
+      </div>
   );
 };
 

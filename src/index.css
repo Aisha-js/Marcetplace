@@ -25,6 +25,7 @@ code {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+ 
 }
 
 .price-filter {
@@ -32,6 +33,7 @@ code {
   justify-content: space-between;
   align-items: center;
   width: 250px;
+ padding-right: 100px;
 }
 
 .price-filter input {
@@ -45,6 +47,10 @@ code {
 li a {
   text-decoration: none;
   color: #000;
+}
+.footer{
+  background-color: black;
+  color: white;
 }
 
 /* .backround-image {
