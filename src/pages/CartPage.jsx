@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import CartTable from '../components/CartTable';
 import { ClientContext } from '../context/ClientProvider';
 
 const CartPage = () => {
@@ -16,6 +17,7 @@ if (!cart) {
     return (
         <div>
         <h2>Cart Page</h2>
+        <CartTable cart={cart} />
         </div>
     );
 };

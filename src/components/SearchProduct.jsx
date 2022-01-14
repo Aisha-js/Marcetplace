@@ -1,16 +1,11 @@
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+import { styled, alpha } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router";
 import { ClientContext } from "../context/ClientProvider";
-import { useContext, useEffect, useState } from "react";
-import Button from "@restart/ui/esm/Button";
+import { useContext, useEffect, useState } from 'react';
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -69,11 +64,11 @@ const SearchProduct = () => {
     getProducts();
   }
 
-  function reset() {
-    navigate("/products");
-    getProducts();
-    setValue("");
-  }
+//   function reset() {
+//     navigate("/");
+//     getProducts();
+//     setValue("");
+//   }
 
   useEffect(() => {
     setValue(search.get("q"));
