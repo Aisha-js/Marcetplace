@@ -42,12 +42,16 @@ const Navbar = () => {
     </MenuItem>,
     <Link to="/admin">
       <MenuItem onClick={handleCloseNavMenu}>
-        <Typography textAlign="center">Admin Panel</Typography>
+        <Typography className="MenuItem" textAlign="center">
+          Admin Panel
+        </Typography>
       </MenuItem>
     </Link>,
     <Link to="/add">
       <MenuItem onClick={handleCloseNavMenu}>
-        <Typography textAlign="center">Add Product</Typography>
+        <Typography className="MenuItem" textAlign="center">
+          Add Product
+        </Typography>
       </MenuItem>
     </Link>,
   ];
@@ -107,10 +111,19 @@ const Navbar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to="/products">
+            <Link
+              className="seaAll"
+              sx={{ textDecoration: "none" }}
+              to="/products"
+            >
               <Button
+                className="SeeAll"
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 SEE All
               </Button>
