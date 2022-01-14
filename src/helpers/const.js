@@ -49,4 +49,3 @@ export const size = [
       label: 'Jacket',
     },
   ];
-

@@ -11,12 +11,15 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import SearchProduct from './SearchProduct';
+import SearchProduct from "./SearchProduct";
 import ShoppingIcon from "../images/shopping.png";
-import UserIcon from "../images/user.png";
-
+import PersonIcon from "@mui/icons-material/Person";
+import ShopIcon from '../images/shopping-bag.png'
+import { Badge, Notifications, MailOutline } from "@mui/icons-material";
+import { ClientContext } from "../context/ClientProvider";
 
 const Navbar = () => {
+  const { productsCount } = React.useContext(ClientContext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -50,7 +53,7 @@ const Navbar = () => {
     </Link>,
   ];
   return (
-    <AppBar position="static" color="inherit">
+    <AppBar position="static" style={{ backgroundColor: "black" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link to="/">
@@ -108,21 +111,22 @@ const Navbar = () => {
             <Link to="/products">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{ my: 2, color: "white", display: "block" }}
+                variant="outlined"
               >
                 See All
               </Button>
             </Link>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-         <SearchProduct />
+          <Box sx={{ flexGrow: 0 }}>
+            <SearchProduct />
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <img width="30" src={UserIcon} alt="userIcon" />
+                <PersonIcon sx={{ color: "white" }} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -147,6 +151,19 @@ const Navbar = () => {
                 </MenuItem>
               ))}
             </Menu>
+          </Box> 
+          <Box sx={{ my: 2, color: "white", display: "block" }}>
+
+          {/* <MenuItem> */}
+            <Link to="/cart">
+              <IconButton>
+                <Badge badgeContent={productsCount} color="primary">
+                  {/* <img src={ShopIcon} alt="" /> */}
+                  <Notifications/>
+                </Badge>
+              </IconButton>
+            </Link>
+          {/* </MenuItem> */}
           </Box>
         </Toolbar>
       </Container>

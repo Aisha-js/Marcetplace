@@ -31,28 +31,28 @@ const ProductDetail = () => {
           </Grid>
           <Grid item xs={6} sm={4} md={4}>
             <div>
-              <CardContent> 
-               <Typography variant="h3" component="div">
-                {detail.name}
+              <CardContent>
+                <Typography variant="h3" component="div">
+                  {detail.name}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                <span>Type: </span>
+                  <span>Type: </span>
                   {detail.type}
                 </Typography>
                 <Typography variant="h5">
-                <span>Brand: </span>
+                  <span>Brand: </span>
                   {detail.brand}
                 </Typography>
                 <Typography variant="h5">
-                <span>Size: </span>
+                  <span>Size: </span>
                   {detail.size}
                 </Typography>
                 <Typography variant="h5">
-                <span>Color: </span>
+                  <span>Color: </span>
                   {detail.color}
                 </Typography>
                 <Typography variant="h5">
-                <span>Price: </span>
+                  <span>Price: </span>
                   {detail.price}
                 </Typography>
               </CardContent>

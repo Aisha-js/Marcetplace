@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Button from "@mui/material/Button";
 
 export default function ProductCard({item}) {
-    const { addAndDeleteProductInCart } =  React.useContext( ClientContext)
+    const { addAndDeleteProductInCart, checkProductInCart } =  React.useContext( ClientContext)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -31,7 +31,19 @@ export default function ProductCard({item}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        {checkProductInCart(item.id) ? (
+          <Button
+            color="error"
+            onClick={() => addAndDeleteProductInCart(item)}
+            size="small"
+          >
+            В корзине
+          </Button>
+        ) : (
+          <Button onClick={() => addAndDeleteProductInCart(item)} size="small">
+            В корзину
+          </Button>
+        )}
         <Link to={`/product/${item.id}`}>
         <Button variant="contained"  size="small"> Details</Button>
         </ Link>
