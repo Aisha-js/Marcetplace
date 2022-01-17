@@ -1,4 +1,5 @@
 import { Button, TextField } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
@@ -51,7 +52,9 @@ const FilterProducts = () => {
           label="До"
           value={to}
         />
-        <Button onClick={reset}>Reset</Button>
+        <CloseIcon 
+        style={{ cursor: "pointer" }}
+        onClick={reset} />
       </div>
       < SearchProduct />
     </div>

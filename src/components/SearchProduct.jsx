@@ -66,11 +66,6 @@ const SearchProduct = () => {
     getProducts();
   }
 
-  // function reset() {
-  //   navigate("/");
-  //   getProducts();
-  //   setValue("");
-  // }
 
   useEffect(() => {
     setValue(search.get("q"));
@@ -78,10 +73,10 @@ const SearchProduct = () => {
 
   return (
     <div className="search-product">
-      <div>
-        <Toolbar  variant="outlined">
-          <Search variant="outlined">
-            <SearchIconWrapper>
+      
+        <Toolbar  variant="outlined" color="error">
+          <Search >
+            <SearchIconWrapper variant="outlined" >
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
@@ -92,8 +87,6 @@ const SearchProduct = () => {
             />
           </Search>
         </Toolbar>
-      </div>
-      {/* <Button sx={{color: "white"}} onClick={reset}> <img src={close} alt="close"/> </Button> */}
       </div>
   );
 };

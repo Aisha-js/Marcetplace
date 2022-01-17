@@ -15,7 +15,10 @@ code {
 .add-product {
   width: 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .product-detail img {
   width: 100%;
   height: 400px;
@@ -58,3 +61,4 @@ li a {
   width: 100%;
   height: 600px;
 } */
+
