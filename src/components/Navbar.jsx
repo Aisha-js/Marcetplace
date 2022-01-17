@@ -11,12 +11,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import SearchProduct from "./SearchProduct";
 import ShoppingIcon from "../images/shopping.png";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import Badge from "@mui/material/Badge";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { ClientContext } from "../context/ClientProvider";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AuthContext } from "../context/AuthProvider";
@@ -148,14 +146,6 @@ const Navbar = () => {
               Войти
             </Button>
           )}
-
-          <Box sx={{ my: 2, color: "white", display: "block" }}>
-            <Box sx={{ flexGrow: 0 }}>
-              <IconButton>
-                <ShoppingBagIcon sx={{ color: "white" }} />
-              </IconButton>
-            </Box>
-          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
