@@ -5,6 +5,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { ClientContext } from "../context/ClientProvider";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
+import BasicModal from "../components/OrderForm";
+
+
 
 const Container = styled.div``;
 
@@ -136,7 +139,7 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
+const ButtonCart = styled.button`
   width: 100%;
   padding: 10px;
   background-color: black;
@@ -147,6 +150,10 @@ const Button = styled.button`
 export default function CartPageSecond() {
   const { changeCountCartProduct, deleteProductInCart , cart , getCart } =
     React.useContext(ClientContext);
+
+    const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
 useEffect(() =>{
   getCart()
@@ -164,9 +171,6 @@ if(!cart){
             <TopButton>ПРОДОЛЖИТЬ ПОКУПКУ</TopButton>
           </Link>
 
-          <Link to="/creditcard">
-          <TopButton type="filled">КУПИТЬ</TopButton>
-          </Link>
         </Top>
         <Bottom>
           <Info>
@@ -192,7 +196,7 @@ if(!cart){
                     <Add
                       style={{ cursor: "pointer" }}
                       onClick={(event) => {
-                        if (item.count < 1) {
+                        if (item.count <= 0) {
                           return;
                         }
                         changeCountCartProduct(
@@ -205,7 +209,7 @@ if(!cart){
                     <Remove
                       style={{ cursor: "pointer" }}
                       onClick={(event) => {
-                        if (item.count < 1) {
+                        if (item.count <= 0) {
                           return;
                         }
                         changeCountCartProduct(
@@ -228,6 +232,7 @@ if(!cart){
             ))}
             <Hr />
           </Info>
+          
           <Summary>
             <SummaryTitle>ВАШ ЗАКАЗ</SummaryTitle>
             <SummaryItem>
@@ -241,12 +246,16 @@ if(!cart){
               <SummaryItemText>ИТОГО</SummaryItemText>
               <SummaryItemPrice>{cart.totalPrice}</SummaryItemPrice>
             </SummaryItem>
-            <Link to="/creditcard">
-            <Button>КУПИТЬ</Button>
-            </Link>
+            
+            <ButtonCart onClick={handleOpen}>ПРОДОЛЖИТЬ ПОКУПКУ</ButtonCart>
+           
           </Summary>
         </Bottom>
       </Wrapper>
+      <BasicModal open={open} handleClose={handleClose}/>
+      
     </Container>
-  );
-}
+    
+  ); 
+  }
+
