@@ -1,13 +1,10 @@
-import { styled, alpha } from '@mui/material/styles';
-import Toolbar from '@mui/material/Toolbar';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router";
 import { ClientContext } from "../context/ClientProvider";
-import { useContext, useEffect, useState } from 'react';
-// import { Button } from '@mui/material';
-// import close from '../images/close.png'
-
+import { useContext, useEffect, useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -73,11 +70,13 @@ const SearchProduct = () => {
 
   return (
     <div className="search-product">
+
       
         <Toolbar  variant="outlined" color="error">
           <Search >
             <SearchIconWrapper variant="outlined" >
               <SearchIcon />
+
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
@@ -88,6 +87,7 @@ const SearchProduct = () => {
           </Search>
         </Toolbar>
       </div>
+
   );
 };
 

@@ -1,11 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import {
-  Button,
-  CardContent,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { CardContent, Container, Grid, Typography } from "@mui/material";
 
 import { useParams } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
@@ -84,6 +78,9 @@ const ProductDetail = () => {
         </Grid>
       </div>
       <div>
+
+        <AllProducts />
+
       </div>
 
       </Top>
