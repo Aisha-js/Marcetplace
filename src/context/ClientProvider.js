@@ -124,6 +124,7 @@ const ClientProvider = (props) => {
       payload: cart,
     };
     dispatch(action);
+    
   }
 
   function changeCountCartProduct(value, id) {
@@ -154,6 +155,9 @@ const ClientProvider = (props) => {
     };
     dispatch(action);
   }
+
+ 
+
 
   //! Pagination
 

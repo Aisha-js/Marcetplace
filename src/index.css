@@ -15,7 +15,10 @@ code {
 .add-product {
   width: 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .product-detail img {
   width: 100%;
   height: 400px;
@@ -52,6 +55,7 @@ li a {
   color: white;
 }
 
+
 .css-7mt4h1-MuiInputBase-root .MuiInputBase-input {
   border: 1px solid black;
   border-radius: 10px;
@@ -80,3 +84,4 @@ li a {
   border: 1px solid;
   border-radius: 10px;
 }
+

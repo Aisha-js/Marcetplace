@@ -7,10 +7,11 @@ import AuthProvider from "./context/AuthProvider";
 import ClientProvider from "./context/ClientProvider";
 import AddPoduct from "./pages/AddPoduct";
 import AdminPannel from "./pages/AdminPannel";
-import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductDetail from "./pages/ProductDetail";
 import ProductsPage from "./pages/ProductsPage";
+import CartPageSecond from "./pages/CartPageSecond"
+import CreditCardPage from "./pages/creditCard/CreditCardPage";
 
 const MyRoutes = () => {
   return (
@@ -25,7 +26,9 @@ const MyRoutes = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/products/" element={<ProductsPage />} />
-              <Route path="/cart" element={<CartPage />} />
+
+              <Route path="/cart/" element={<CartPageSecond />} />
+              <Route path="/creditcard/" element={<CreditCardPage/>} />
             </Routes>
             <Footer />
           </BrowserRouter>

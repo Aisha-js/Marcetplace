@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import ShoppingIcon from "../images/shopping.png";
 import PersonIcon from "@mui/icons-material/Person";
 import Badge from "@mui/material/Badge";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { ClientContext } from "../context/ClientProvider";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AuthContext } from "../context/AuthProvider";
@@ -117,6 +116,20 @@ const Navbar = () => {
               </Button>
             </Link>
           </Box>
+
+
+
+          {user ? (
+            <>
+              <IconButton onClick={logout}>
+                <PersonIcon sx={{ color: "white" }} />
+              </IconButton>
+            </>
+          ) : (
+            <Button color="inherit" onClick={authWithGoogle}>
+              Войти
+            </Button>
+          )}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

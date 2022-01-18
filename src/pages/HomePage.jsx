@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Container } from "react-bootstrap";
+
 import CaruselFirstSlide from "../components/CaruselFirstSlide";
 import Imgg from "../images/Imgg.png";
 
@@ -14,6 +15,7 @@ const HomePage = () => {
           <img className="d-block w-100" src={Imgg} alt="Second slide" />
         </Carousel.Item>
       </Carousel>
+
     </Container>
   );
 };

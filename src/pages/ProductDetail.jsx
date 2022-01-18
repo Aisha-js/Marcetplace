@@ -4,6 +4,26 @@ import { CardContent, Container, Grid, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
 import AllProducts from "../components/AllProducts";
+import styled from "styled-components";
+
+
+//  const Container = styled.div``;
+
+const Wrapper = styled.div`
+  padding: 20px;
+`;
+
+const Title = styled.h1`
+  font-weight: 300;
+  text-align: center;
+`;
+
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+`;
 
 const ProductDetail = () => {
   const params = useParams();
@@ -16,7 +36,9 @@ const ProductDetail = () => {
   }
   return (
     <Container>
-      <h2>Product Info</h2>
+      <Wrapper>
+      <Title>DETAIL INFO</Title>
+      <Top>
       <div className="product-detail">
         <Grid container>
           <Grid item xs={6} sm={8} md={8}>
@@ -56,8 +78,14 @@ const ProductDetail = () => {
         </Grid>
       </div>
       <div>
+
         <AllProducts />
+
       </div>
+
+      </Top>
+      </Wrapper>
+      <AllProducts />
     </Container>
   );
 };

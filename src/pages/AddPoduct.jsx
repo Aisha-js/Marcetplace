@@ -1,13 +1,31 @@
-import { Button, Container, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { AdminContext } from "../context/AdminProvider";
 import MenuItem from '@mui/material/MenuItem';
 import { size, type } from "../helpers/const";
+import styled from "styled-components";
 
 
+const Container = styled.div``;
+
+const Wrapper = styled.div`
+
+  padding: 20px;
+`;
+
+const Title = styled.h1`
+  font-weight: 300;
+  text-align: center;
+`;
+
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+`;
 
 
-  
 const AddProduct = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -53,7 +71,9 @@ const AddProduct = () => {
   return (
     <div className="add-product">
       <Container>
-        <h2>AddProduct</h2>
+        <Wrapper>
+        <Title>ADD PRODUCT </Title>
+        <Top>
         <form onSubmit={handleSubmit}>
           <TextField
             onChange={handleInput}
@@ -133,7 +153,11 @@ const AddProduct = () => {
             Add
           </Button>
         </form>
+        </Top>
+        </Wrapper>
       </Container>
+        
+      
     </div>
   );
 };

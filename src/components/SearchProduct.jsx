@@ -63,17 +63,20 @@ const SearchProduct = () => {
     getProducts();
   }
 
+
   useEffect(() => {
     setValue(search.get("q"));
   }, []);
 
   return (
     <div className="search-product">
-      <div>
-        <Toolbar variant="outlined">
-          <Search variant="outlined">
-            <SearchIconWrapper>
-              <SearchIcon variant="outlined" />
+
+      
+        <Toolbar  variant="outlined" color="error">
+          <Search >
+            <SearchIconWrapper variant="outlined" >
+              <SearchIcon />
+
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
@@ -84,7 +87,7 @@ const SearchProduct = () => {
           </Search>
         </Toolbar>
       </div>
-    </div>
+
   );
 };
 
