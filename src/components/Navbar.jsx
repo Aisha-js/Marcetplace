@@ -18,7 +18,7 @@ import { ClientContext } from "../context/ClientProvider";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AuthContext } from "../context/AuthProvider";
 import LogoutIcon from "@mui/icons-material/Logout";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+
 
 const Navbar = () => {
   const { productsCount } = React.useContext(ClientContext);
