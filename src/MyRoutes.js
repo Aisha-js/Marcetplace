@@ -14,23 +14,24 @@ import ProductsPage from "./pages/ProductsPage";
 
 const MyRoutes = () => {
   return (
-    <AdminProvider>
-      <ClientProvider>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/add" element={<AddPoduct />} />
-            <Route path="/admin" element={<AdminPannel />} />
-            <Route path="/" element={<HomePage />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/products/" element={<ProductsPage />} />
-            <Route path="/cart" element={<CartPage/>} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </ClientProvider>
-    </AdminProvider>
-
+    <AuthProvider>
+      <AdminProvider>
+        <ClientProvider>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/add" element={<AddPoduct />} />
+              <Route path="/admin" element={<AdminPannel />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/products/" element={<ProductsPage />} />
+              <Route path="/cart" element={<CartPage />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </ClientProvider>
+      </AdminProvider>
+    </AuthProvider>
   );
 };
 

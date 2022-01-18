@@ -10,6 +10,8 @@ export default function ProductsPagination() {
   return (
     <Stack spacing={2}>
       <Pagination
+        style={{ display: "flex", justifyContent: "center" }}
+        color="secondary"
         variant="outlined"
         count={pagesCount}
         page={currentPage}

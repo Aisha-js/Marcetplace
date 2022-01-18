@@ -10,7 +10,6 @@ const INIT_STATE = {
   products: null,
   detail: null,
   productsCount: cart ? cart.products.length : 0,
-  detail: null,
 };
 
 const reducer = (state, action) => {
@@ -19,7 +18,7 @@ const reducer = (state, action) => {
       return { ...state, products: action.payload };
     case "GET_PRODUCT_DETAIL":
       return { ...state, detail: action.payload };
-      case "ADD_AND_DELETE_PRODUCT_IN_CART":
+    case "ADD_AND_DELETE_PRODUCT_IN_CART":
       return { ...state, productsCount: action.payload };
     case "GET_CART":
       return { ...state, cart: action.payload };

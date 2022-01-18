@@ -1,13 +1,10 @@
-import { styled, alpha } from '@mui/material/styles';
-import Toolbar from '@mui/material/Toolbar';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router";
 import { ClientContext } from "../context/ClientProvider";
-import { useContext, useEffect, useState } from 'react';
-// import { Button } from '@mui/material';
-// import close from '../images/close.png'
-
+import { useContext, useEffect, useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -66,12 +63,6 @@ const SearchProduct = () => {
     getProducts();
   }
 
-  // function reset() {
-  //   navigate("/");
-  //   getProducts();
-  //   setValue("");
-  // }
-
   useEffect(() => {
     setValue(search.get("q"));
   }, []);
@@ -79,10 +70,10 @@ const SearchProduct = () => {
   return (
     <div className="search-product">
       <div>
-        <Toolbar  variant="outlined">
+        <Toolbar variant="outlined">
           <Search variant="outlined">
             <SearchIconWrapper>
-              <SearchIcon />
+              <SearchIcon variant="outlined" />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
@@ -93,8 +84,7 @@ const SearchProduct = () => {
           </Search>
         </Toolbar>
       </div>
-      {/* <Button sx={{color: "white"}} onClick={reset}> <img src={close} alt="close"/> </Button> */}
-      </div>
+    </div>
   );
 };
 
