@@ -12,6 +12,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductsPage from "./pages/ProductsPage";
 import CartPageSecond from "./pages/CartPageSecond"
 import CreditCardPage from "./pages/creditCard/CreditCardPage";
+import OrderForm from "./pages/OrderForm";
 
 const MyRoutes = () => {
   return (
@@ -28,6 +29,7 @@ const MyRoutes = () => {
               <Route path="/products/" element={<ProductsPage />} />
               <Route path="/cart/" element={<CartPageSecond />} />
               <Route path="/creditcard/" element={<CreditCardPage/>} />
+              <Route path="/orderform/" element={<OrderForm/>} />
             </Routes>
             <Footer />
           </BrowserRouter>

@@ -100,7 +100,7 @@ const CreditCardPage = () => {
                                 id="validateButton"
                                 type="submit"
                             >
-                                Confirm your order
+                            ЗАВЕРШИТЬ ПОКУПКУ
                             </Button>
                         </Form>
                     </div >
