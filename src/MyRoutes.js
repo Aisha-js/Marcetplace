@@ -12,7 +12,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ProductsPage from "./pages/ProductsPage";
 import CartPageSecond from "./pages/CartPageSecond"
 import CreditCardPage from "./pages/creditCard/CreditCardPage";
-import OrderForm from "./pages/OrderForm";
+import OrderForm from "./components/OrderForm";
 
 const MyRoutes = () => {
   return (

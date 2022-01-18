@@ -5,7 +5,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { ClientContext } from "../context/ClientProvider";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
-import BasicModal from "./OrderForm";
+import BasicModal from "../components/OrderForm";
 
 
 
