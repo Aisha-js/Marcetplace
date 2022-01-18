@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../context/ClientProvider";
 import SearchProduct from "./SearchProduct";
+import Reset from "@mui/icons-material/HighlightOff";
 
 const FilterProducts = () => {
   let search = new URLSearchParams(window.location.search);
@@ -12,7 +13,7 @@ const FilterProducts = () => {
 
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-//   const [value, setValue] = useState("");
+  //   const [value, setValue] = useState("");
 
   function filter(key, value) {
     search.set(key, value);
@@ -56,7 +57,7 @@ const FilterProducts = () => {
         style={{ cursor: "pointer" }}
         onClick={reset} />
       </div>
-      < SearchProduct />
+      <SearchProduct />
     </div>
   );
 };

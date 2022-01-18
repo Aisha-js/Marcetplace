@@ -26,6 +26,7 @@ const MyRoutes = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/products/" element={<ProductsPage />} />
+
               <Route path="/cart/" element={<CartPageSecond />} />
               <Route path="/creditcard/" element={<CreditCardPage/>} />
             </Routes>
