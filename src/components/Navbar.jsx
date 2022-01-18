@@ -26,9 +26,7 @@ const Navbar = () => {
   const [setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  // const handleOpenNavMenu = (event) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
+  
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -118,17 +116,7 @@ const Navbar = () => {
             </Link>
           </Box>
 
-          {user ? (
-            <>
-              <IconButton onClick={logout}>
-                <PersonIcon sx={{ color: "white" }} />
-              </IconButton>
-            </>
-          ) : (
-            <Button color="inherit" onClick={authWithGoogle}>
-              Войти
-            </Button>
-          )}
+         
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
