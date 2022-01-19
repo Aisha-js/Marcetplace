@@ -77,12 +77,6 @@ const ProductDetail = () => {
           </Grid>
         </Grid>
       </div>
-      <div>
-
-        <AllProducts />
-
-      </div>
-
       </Top>
       </Wrapper>
       <AllProducts />
